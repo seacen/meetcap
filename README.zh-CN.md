@@ -13,8 +13,7 @@
 <p align="center">
   <a href="https://github.com/seacen/meetcap/releases/latest"><img src="https://img.shields.io/github/v/release/seacen/meetcap?style=flat-square&label=%E7%89%88%E6%9C%AC&color=1D1D1F" alt="版本"></a>
   <img src="https://img.shields.io/badge/macOS_14.2%2B-Apple_%E8%8A%AF%E7%89%87_%7C_Intel-1D1D1F?style=flat-square" alt="macOS 14.2 或更高版本，Apple 芯片或 Intel">
-  <img src="https://img.shields.io/badge/Windows-%E5%9C%A8%E8%B7%AF%E4%B8%8A-8E8E93?style=flat-square" alt="Windows 在路上">
-  <img src="https://img.shields.io/badge/iPhone-%E5%9C%A8%E8%B7%AF%E4%B8%8A-8E8E93?style=flat-square" alt="iPhone 在路上">
+  <img src="https://img.shields.io/badge/Windows_%C2%B7_iPhone-%E5%8D%B3%E5%B0%86%E6%8E%A8%E5%87%BA-8E8E93?style=flat-square" alt="Windows 与 iPhone 即将推出">
   <img src="https://img.shields.io/badge/%E5%85%8D%E8%B4%B9-1D1D1F?style=flat-square" alt="免费">
 </p>
 
