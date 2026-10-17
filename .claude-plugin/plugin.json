@@ -1,0 +1,24 @@
+{
+  "name": "meetcap",
+  "version": "1.0.0",
+  "displayName": "MeetCap",
+  "description": "Ask your agent to record a meeting, write the minutes, or find what was decided last week. Requires the MeetCap app (meetcap.seacen.dev).",
+  "author": {
+    "name": "Seacen Zhao",
+    "email": "mail@seacen.dev",
+    "url": "https://github.com/seacen"
+  },
+  "homepage": "https://meetcap.seacen.dev/?utm_source=claude-plugins&utm_medium=directory&utm_campaign=launch",
+  "repository": "https://github.com/seacen/meetcap",
+  "icon": "./skills/meetcap/assets/icon.svg",
+  "documentationUrl": "https://meetcap.seacen.dev/docs/how-to/agents/",
+  "supportUrl": "https://meetcap.seacen.dev/feedback/",
+  "privacyPolicyUrl": "https://meetcap.seacen.dev/privacy/",
+  "termsOfServiceUrl": "https://meetcap.seacen.dev/terms/",
+  "keywords": [
+    "meetings",
+    "transcription",
+    "minutes",
+    "macos"
+  ]
+}

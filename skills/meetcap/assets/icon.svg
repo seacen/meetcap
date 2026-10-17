@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 100 824 824">
+<!-- The app icon (apps/mac/MeetCap/App/AppIcon.icon): its two layers on the 1024 canvas, scaled onto the macOS 824 rounded square on white. -->
+<rect x="100" y="100" width="824" height="824" rx="185" fill="#FFFFFF"/>
+<g transform="translate(100 100) scale(0.8046875)" fill="none" stroke-width="69.59" stroke-linecap="round">
+<path stroke="#FF3B30" d="M212.5 661.13V362.87M324.35 661.13V521.94M436.19 661.13V362.87"/>
+<path stroke="#1D1D1F" d="M562.95 362.87H811.5M562.95 512H662.37M562.95 661.13H811.5"/>
+</g>
+</svg>

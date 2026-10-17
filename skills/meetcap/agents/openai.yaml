@@ -1,0 +1,5 @@
+interface:
+  display_name: "MeetCap"
+  short_description: 'Tell your agent "record this meeting" and MeetCap starts. Afterward, ask it for the minutes or for what was said in any past meeting. Recordings stay on your computer. Needs the MeetCap app for Mac.'
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"

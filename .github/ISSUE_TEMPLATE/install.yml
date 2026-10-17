@@ -1,0 +1,69 @@
+name: "Can't install / 装不上"
+description: "MeetCap won't download, install or open. / 下载不了、装不上或打不开 MeetCap。"
+title: "[Install] "
+labels: ["bug", "install"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues here are public, so please don't attach recordings or paste transcript text; the answers below are all we need.
+
+        Issue 是公开的，请不要附录音或贴逐字稿原文，填下面几项就够了。
+  - type: input
+    id: macos
+    attributes:
+      label: "macOS version / macOS 版本"
+      description: "Apple menu › About This Mac. / 苹果菜单 › 关于本机。"
+      placeholder: "15.5"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: "MeetCap version / MeetCap 版本"
+      description: |
+        If MeetCap opens, open the meeting window and choose MeetCap › About MeetCap, or run `meetcap --version` in Terminal. Otherwise, leave this blank.
+
+        MeetCap 能打开的话：在会议窗口里点菜单栏的 MeetCap › 关于 MeetCap，或者在终端里运行 `meetcap --version`。打不开就留空。
+      placeholder: "1.0.0"
+    validations:
+      required: false
+  - type: dropdown
+    id: install_method
+    attributes:
+      label: "How did you install MeetCap? / 怎么装的"
+      options:
+        - "Download page (meetcap.seacen.dev/download) / 下载页"
+        - "Terminal command (install.sh) / 终端里的一行命令"
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: "What happened / 发生了什么"
+      description: |
+        Paste any message you saw, word for word.
+
+        看到的提示请原样贴上。
+      placeholder: |
+        e.g. The DMG opened, but MeetCap didn't start when I double-clicked it.
+        例：DMG 能打开，双击 MeetCap 没有反应。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "What you expected / 正常应该是什么样"
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: "Output of meetcap doctor / meetcap doctor 的检查结果"
+      description: |
+        Skip this if MeetCap didn't install. Otherwise, run `meetcap doctor` in Terminal and paste everything it prints. If Terminal can't find the command, run `~/.local/bin/meetcap doctor`. It shows folder paths on your computer; delete any you'd rather not share.
+
+        装上了再填：在终端里运行 `meetcap doctor`，把显示的内容全部贴上。如果终端提示找不到命令，运行 `~/.local/bin/meetcap doctor`。结果里有电脑上的文件夹路径，不想公开的可以删掉。
+      render: shell
+    validations:
+      required: false

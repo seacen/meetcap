@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+contact_links:
+  # GitHub drops mailto: links from this list, so the address is in the name
+  # and the link goes to the site's feedback page, which gives it.
+  - name: "Email mail@seacen.dev / 发邮件给我们"
+    url: "https://meetcap.seacen.dev/feedback/"
+    about: "For anything other than a problem report or a suggestion. / 报问题和提建议以外的事。"
+  - name: "Docs / 文档"
+    url: "https://meetcap.seacen.dev/docs/"
+    about: "Install, setup, permissions and troubleshooting. / 安装、设置、权限与排错。"

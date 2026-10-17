@@ -1,0 +1,14 @@
+{
+  "name": "meetcap",
+  "owner": {
+    "name": "Seacen Zhao",
+    "url": "https://github.com/seacen"
+  },
+  "description": "All ears. All yours. Record any meeting you want, free, for as long as you like. If your mind drifts or the topic is new, live summaries catch you up and explain the terms. When the meeting ends, clear minutes are already waiting, ready to send. MeetCap transcribes your recordings on your computer and never uploads them. And your AI agent can record, search past meetings, or use them as context. Just ask.",
+  "plugins": [
+    {
+      "name": "meetcap",
+      "source": "./"
+    }
+  ]
+}

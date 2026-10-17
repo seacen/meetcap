@@ -1,0 +1,90 @@
+name: "Problem with the minutes / 纪要有问题"
+description: "The minutes didn't appear, or got something wrong. / 纪要没出来，或者写得不对。"
+title: "[Minutes] "
+labels: ["bug", "minutes"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues here are public, so please don't attach recordings or paste transcript or minutes text; the answers below and the `meetcap doctor` output are all we need.
+
+        Issue 是公开的，请不要附录音，也不要贴逐字稿或纪要原文，填下面几项、附上 `meetcap doctor` 的输出就够了。
+  - type: input
+    id: macos
+    attributes:
+      label: "macOS version / macOS 版本"
+      description: "Apple menu › About This Mac. / 苹果菜单 › 关于本机。"
+      placeholder: "15.5"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: "MeetCap version / MeetCap 版本"
+      description: |
+        With the meeting window open, choose MeetCap › About MeetCap, or run `meetcap --version` in Terminal.
+
+        打开会议窗口，点菜单栏的 MeetCap › 关于 MeetCap，或在终端里运行 `meetcap --version`。
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: install_method
+    attributes:
+      label: "How did you install MeetCap? / 怎么装的"
+      options:
+        - "Download page (meetcap.seacen.dev/download) / 下载页"
+        - "Terminal command (install.sh) / 终端里的一行命令"
+    validations:
+      required: true
+  - type: dropdown
+    id: minutes_mode
+    attributes:
+      label: "Write summaries and minutes with / 小结和纪要怎么生成"
+      description: "As chosen in Settings › Minutes. / 设置 › 纪要里选的那一项。"
+      options:
+        - "Your own API key / 自己的 API 密钥"
+        - "Your agent, run by MeetCap / 由 MeetCap 启动的智能体"
+        - "Your agent, when you ask it / 与智能体对话"
+        - "This computer / 在这台电脑上生成"
+        - "Not sure / 不确定"
+    validations:
+      required: true
+  - type: input
+    id: agent_or_model
+    attributes:
+      label: "Which agent or model / 哪个智能体或模型"
+      description: "Never paste your API key. / 不要贴 API 密钥。"
+      placeholder: "Claude Code / Codex / qwen-plus"
+    validations:
+      required: false
+  - type: textarea
+    id: happened
+    attributes:
+      label: "What happened / 发生了什么"
+      description: |
+        Describe it in your own words. If you saw a message, paste it word for word.
+
+        用你自己的话说就好；如果看到了提示，请原样贴上。
+      placeholder: |
+        e.g. Something that was only proposed shows up as decided. / The minutes never appeared after the meeting.
+        例：只是提议的事写成了定论。／会开完了，纪要一直没出来。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "What you expected / 正常应该是什么样"
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: "Output of meetcap doctor / meetcap doctor 的检查结果"
+      description: |
+        Run `meetcap doctor` in Terminal and paste everything it prints. If Terminal can't find the command, run `~/.local/bin/meetcap doctor`. It shows folder paths on your computer; delete any you'd rather not share.
+
+        在终端里运行 `meetcap doctor`，把显示的内容全部贴上。如果终端提示找不到命令，运行 `~/.local/bin/meetcap doctor`。结果里有电脑上的文件夹路径，不想公开的可以删掉。
+      render: shell
+    validations:
+      required: false

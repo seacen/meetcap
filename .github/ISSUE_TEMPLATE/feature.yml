@@ -1,0 +1,37 @@
+name: "Suggest a feature / 提建议"
+description: "Something MeetCap doesn't do yet, or could do better. / MeetCap 还做不到，或者能做得更好的地方。"
+title: "[Idea] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Search [the existing suggestions](https://github.com/seacen/meetcap/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc) first. If yours is already there, give it a 👍 instead; it shows us how many people want it. Issues here are public, so keep it general: no names, and nothing anyone said in a meeting.
+
+        提之前先搜一下[已有的建议](https://github.com/seacen/meetcap/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc)。有一样的，点个 👍 就好，能让我们看到有多少人想要。Issue 是公开的，请不要贴会上的原话或参会人的名字。
+  - type: textarea
+    id: situation
+    attributes:
+      label: "What are you trying to do? / 你想用 MeetCap 做什么"
+      description: |
+        Describe the situation: what kind of meeting, what you need from it, and where MeetCap falls short.
+
+        讲讲场景：什么样的会、你想要什么结果、MeetCap 哪里没做到。
+      placeholder: |
+        e.g. I run a weekly client call, and the client expects the action items from us the same afternoon.
+        例：我一天连着开好几场会，散会后还得把纪要一份份转发给参会的人。
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: "What would you like MeetCap to do? / 希望 MeetCap 怎么做"
+    validations:
+      required: true
+  - type: textarea
+    id: today
+    attributes:
+      label: "How do you handle it today? / 现在你是怎么做的"
+      description: "Optional. / 可以不填。"
+    validations:
+      required: false
