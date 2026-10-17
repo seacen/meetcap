@@ -1,14 +1,22 @@
-name: "Problem with the minutes / 纪要有问题"
-description: "The minutes didn't appear, or got something wrong. / 纪要没出来，或者写得不对。"
-title: "[Minutes] "
-labels: ["bug", "minutes"]
+name: "Other problem / 其他问题"
+description: "Anything not about recording, the transcript or the minutes: the library and syncing, exporting, agents and the meetcap command, or MeetCap quitting, freezing or running slowly. / 不属于录音、逐字稿和纪要的问题：会议库与同步、导出、智能体与命令行，或者闪退、卡住、很慢。"
+title: "[Other] "
+labels: ["bug", "other"]
 body:
   - type: markdown
     attributes:
       value: |
-        Issues here are public, so please don't attach recordings or paste transcript or minutes text; the answers below and the `meetcap doctor` output are all we need.
+        Pick the form for whatever went wrong first. For example, if the transcript is missing what other people said because their audio wasn't recorded, use "Recording problem".
 
-        Issue 是公开的，请不要附录音，也不要贴逐字稿或纪要原文，填下面几项、附上 `meetcap doctor` 的输出就够了。
+        If MeetCap quits unexpectedly or freezes, the quickest way to tell us is to right-click the MeetCap icon in the menu bar and choose Report a Problem. It sends your message along with the crash or freeze report, and it isn't posted publicly.
+
+        Issues here are public, so please don't attach recordings or paste transcript or minutes text; the answers below are all we need.
+
+        按最早出问题的那一步选表。比如逐字稿里没有对方说的话，是因为没录到对方的声音，就选“录音有问题”。
+
+        MeetCap 闪退或卡住时，最快的办法是用 app 里的反馈：右键点菜单栏的 MeetCap 图标，选“反馈问题”。它会连同崩溃和卡顿记录一起发给我们，不会公开。
+
+        Issue 是公开的，请不要附录音，也不要贴逐字稿或纪要原文，填下面几项就够了。
   - type: input
     id: macos
     attributes:
@@ -38,26 +46,17 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: minutes_mode
+    id: area
     attributes:
-      label: "Write summaries and minutes with / 小结和纪要怎么生成"
-      description: "As chosen in Settings › Minutes. / 设置 › 纪要里选的那一项。"
+      label: "What's it about? / 哪方面"
       options:
-        - "Your own API key / 自己的 API 密钥"
-        - "Your agent, run by MeetCap / 由 MeetCap 启动的智能体"
-        - "Your agent, when you ask it / 与智能体对话"
-        - "This computer / 在这台电脑上生成"
-        - "Not sure / 不确定"
+        - "The library or syncing / 会议库与同步"
+        - "Exporting / 导出"
+        - "An agent or the meetcap command / 智能体与命令行"
+        - "MeetCap quits, freezes or runs slowly / 闪退、卡住或很慢"
+        - "Something else / 其他"
     validations:
       required: true
-  - type: input
-    id: agent_or_model
-    attributes:
-      label: "Which agent or model / 哪个智能体或模型"
-      description: "Never paste your API key. / 不要贴 API 密钥。"
-      placeholder: "Claude Code / Codex / qwen-plus"
-    validations:
-      required: false
   - type: textarea
     id: happened
     attributes:
@@ -67,8 +66,8 @@ body:
 
         用你自己的话说就好；如果看到了提示，请原样贴上。
       placeholder: |
-        e.g. Something that was only proposed shows up as decided. / The minutes never appeared after the meeting.
-        例：只是提议的事写成了定论。／会开完了，纪要一直没出来。
+        e.g. A meeting recorded on my other Mac doesn't show up on this one.
+        例：在另一台 Mac 上录的会，这台上看不到。
     validations:
       required: true
   - type: textarea

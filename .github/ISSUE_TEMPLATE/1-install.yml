@@ -1,4 +1,4 @@
-name: "Can't install / 装不上"
+name: "Can't install or open / 装不上或打不开"
 description: "MeetCap won't download, install or open. / 下载不了、装不上或打不开 MeetCap。"
 title: "[Install] "
 labels: ["bug", "install"]
@@ -6,9 +6,17 @@ body:
   - type: markdown
     attributes:
       value: |
-        Issues here are public, so please don't attach recordings or paste transcript text; the answers below are all we need.
+        Pick the form for whatever went wrong first. For example, if the transcript is missing what other people said because their audio wasn't recorded, use "Recording problem".
 
-        Issue 是公开的，请不要附录音或贴逐字稿原文，填下面几项就够了。
+        If MeetCap quits unexpectedly or freezes, the quickest way to tell us is to right-click the MeetCap icon in the menu bar and choose Report a Problem. It sends your message along with the crash or freeze report, and it isn't posted publicly.
+
+        Issues here are public, so please don't attach recordings or paste transcript or minutes text; the answers below are all we need.
+
+        按最早出问题的那一步选表。比如逐字稿里没有对方说的话，是因为没录到对方的声音，就选“录音有问题”。
+
+        MeetCap 闪退或卡住时，最快的办法是用 app 里的反馈：右键点菜单栏的 MeetCap 图标，选“反馈问题”。它会连同崩溃和卡顿记录一起发给我们，不会公开。
+
+        Issue 是公开的，请不要附录音，也不要贴逐字稿或纪要原文，填下面几项就够了。
   - type: input
     id: macos
     attributes:

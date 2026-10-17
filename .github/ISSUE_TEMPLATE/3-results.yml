@@ -1,0 +1,137 @@
+name: "Transcript or minutes are wrong / 逐字稿或纪要不对"
+description: "A speaker is labeled wrong or not recognized, words are misheard or missing, the summary or minutes get something wrong, or the minutes never appear. / 说话人认错或没认出来，字听错或漏了，小结或纪要写得不对，或者纪要没出来。"
+title: "[Results] "
+labels: ["bug", "results"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Pick the form for whatever went wrong first. For example, if the transcript is missing what other people said because their audio wasn't recorded, use "Recording problem".
+
+        If MeetCap quits unexpectedly or freezes, the quickest way to tell us is to right-click the MeetCap icon in the menu bar and choose Report a Problem. It sends your message along with the crash or freeze report, and it isn't posted publicly.
+
+        Issues here are public, so please don't attach recordings or paste transcript or minutes text; the answers below are all we need.
+
+        按最早出问题的那一步选表。比如逐字稿里没有对方说的话，是因为没录到对方的声音，就选“录音有问题”。
+
+        MeetCap 闪退或卡住时，最快的办法是用 app 里的反馈：右键点菜单栏的 MeetCap 图标，选“反馈问题”。它会连同崩溃和卡顿记录一起发给我们，不会公开。
+
+        Issue 是公开的，请不要附录音，也不要贴逐字稿或纪要原文，填下面几项就够了。
+  - type: input
+    id: macos
+    attributes:
+      label: "macOS version / macOS 版本"
+      description: "Apple menu › About This Mac. / 苹果菜单 › 关于本机。"
+      placeholder: "15.5"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: "MeetCap version / MeetCap 版本"
+      description: |
+        With the meeting window open, choose MeetCap › About MeetCap, or run `meetcap --version` in Terminal.
+
+        打开会议窗口，点菜单栏的 MeetCap › 关于 MeetCap，或在终端里运行 `meetcap --version`。
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: install_method
+    attributes:
+      label: "How did you install MeetCap? / 怎么装的"
+      options:
+        - "Download page (meetcap.seacen.dev/download) / 下载页"
+        - "Terminal command (install.sh) / 终端里的一行命令"
+    validations:
+      required: true
+  - type: dropdown
+    id: what
+    attributes:
+      label: "What's wrong? / 哪一样不对"
+      options:
+        - "Who said what (speakers) / 说话人"
+        - "Words in the transcript / 逐字稿里的字"
+        - "The summary / 小结"
+        - "The minutes / 纪要"
+        - "The minutes never appeared / 纪要没出来"
+    validations:
+      required: true
+  - type: dropdown
+    id: meeting_kind
+    attributes:
+      label: "What you recorded / 录的是什么"
+      options:
+        - "An online meeting (any app or browser) / 线上会（任何会议软件或浏览器）"
+        - "An in-person meeting / 线下会"
+        - "A recording I already had / 已有的录音文件"
+    validations:
+      required: false
+  - type: dropdown
+    id: language
+    attributes:
+      label: "Language spoken / 会上说的语言"
+      options:
+        - "English / 英文"
+        - "Chinese / 中文"
+        - "Both / 中英夹杂"
+    validations:
+      required: false
+  - type: input
+    id: speakers
+    attributes:
+      label: "About how many people spoke / 大约几个人发言"
+      placeholder: "4"
+    validations:
+      required: false
+  - type: dropdown
+    id: minutes_mode
+    attributes:
+      label: "Write summaries and minutes with / 小结和纪要怎么生成"
+      description: "Fill this in if the summary or minutes are wrong. You'll find it in Settings › Minutes. / 小结或纪要不对时填，在设置 › 纪要里能看到。"
+      options:
+        - "Your own API key / 自己的 API 密钥"
+        - "Your agent, run by MeetCap / 由 MeetCap 启动的智能体"
+        - "Your agent, when you ask it / 与智能体对话"
+        - "This computer / 在这台电脑上生成"
+        - "Not sure / 不确定"
+    validations:
+      required: false
+  - type: input
+    id: agent_or_model
+    attributes:
+      label: "Which agent or model / 哪个智能体或模型"
+      description: "Fill this in if the summary or minutes are wrong. Never paste your API key. / 小结或纪要不对时填。不要贴 API 密钥。"
+      placeholder: "Claude Code / Codex / qwen-plus"
+    validations:
+      required: false
+  - type: textarea
+    id: happened
+    attributes:
+      label: "What happened / 发生了什么"
+      description: |
+        Describe it in your own words. If you saw a message, paste it word for word.
+
+        用你自己的话说就好；如果看到了提示，请原样贴上。
+      placeholder: |
+        e.g. Someone I named last week wasn't recognized today. / The minutes never appeared after the meeting.
+        例：上周起过名字的人，今天没认出来。／会开完了，纪要一直没出来。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "What you expected / 正常应该是什么样"
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: "Output of meetcap doctor / meetcap doctor 的检查结果"
+      description: |
+        Run `meetcap doctor` in Terminal and paste everything it prints. If Terminal can't find the command, run `~/.local/bin/meetcap doctor`. It shows folder paths on your computer; delete any you'd rather not share.
+
+        在终端里运行 `meetcap doctor`，把显示的内容全部贴上。如果终端提示找不到命令，运行 `~/.local/bin/meetcap doctor`。结果里有电脑上的文件夹路径，不想公开的可以删掉。
+      render: shell
+    validations:
+      required: false

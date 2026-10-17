@@ -1,0 +1,126 @@
+name: "Recording problem / 录音有问题"
+description: "MeetCap won't start recording (including scheduled recordings), stops partway, or misses your voice or other people's. Permission problems go here too. / 开不了录、没录到自己或对方的声音、录到一半停了，或定时录音没开始；系统权限的问题也选这张。"
+title: "[Recording] "
+labels: ["bug", "recording"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Pick the form for whatever went wrong first. For example, if the transcript is missing what other people said because their audio wasn't recorded, use "Recording problem".
+
+        If MeetCap quits unexpectedly or freezes, the quickest way to tell us is to right-click the MeetCap icon in the menu bar and choose Report a Problem. It sends your message along with the crash or freeze report, and it isn't posted publicly.
+
+        Issues here are public, so please don't attach recordings or paste transcript or minutes text; the answers below are all we need.
+
+        按最早出问题的那一步选表。比如逐字稿里没有对方说的话，是因为没录到对方的声音，就选“录音有问题”。
+
+        MeetCap 闪退或卡住时，最快的办法是用 app 里的反馈：右键点菜单栏的 MeetCap 图标，选“反馈问题”。它会连同崩溃和卡顿记录一起发给我们，不会公开。
+
+        Issue 是公开的，请不要附录音，也不要贴逐字稿或纪要原文，填下面几项就够了。
+  - type: input
+    id: macos
+    attributes:
+      label: "macOS version / macOS 版本"
+      description: "Apple menu › About This Mac. / 苹果菜单 › 关于本机。"
+      placeholder: "15.5"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: "MeetCap version / MeetCap 版本"
+      description: |
+        With the meeting window open, choose MeetCap › About MeetCap, or run `meetcap --version` in Terminal.
+
+        打开会议窗口，点菜单栏的 MeetCap › 关于 MeetCap，或在终端里运行 `meetcap --version`。
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: install_method
+    attributes:
+      label: "How did you install MeetCap? / 怎么装的"
+      options:
+        - "Download page (meetcap.seacen.dev/download) / 下载页"
+        - "Terminal command (install.sh) / 终端里的一行命令"
+    validations:
+      required: true
+  - type: dropdown
+    id: meeting_app
+    attributes:
+      label: "Where was the meeting? / 会在哪里开"
+      options:
+        - "Microsoft Teams"
+        - "Zoom"
+        - "Tencent Meeting (VooV) / 腾讯会议"
+        - "In a browser tab / 浏览器里"
+        - "Another meeting app / 其他会议软件"
+        - "In person / 线下"
+    validations:
+      required: true
+  - type: dropdown
+    id: sound_out
+    attributes:
+      label: "How were you listening? / 怎么听对方说话"
+      options:
+        - "Headphones / 戴耳机"
+        - "The Mac's speakers / 电脑外放"
+        - "Doesn't apply (in person) / 不适用（线下会）"
+    validations:
+      required: true
+  - type: dropdown
+    id: microphone
+    attributes:
+      label: "Microphone / 用的麦克风"
+      options:
+        - "The Mac's built-in microphone / Mac 自带的麦克风"
+        - "AirPods or another Bluetooth headset / AirPods 或其他蓝牙耳机"
+        - "A USB or other wired microphone / USB 或其他有线麦克风"
+        - "Not sure / 不确定"
+    validations:
+      required: true
+  - type: dropdown
+    id: missing
+    attributes:
+      label: "Whose voice is missing? / 缺了谁的声音"
+      options:
+        - "Mine / 我的"
+        - "Other people's / 对方的"
+        - "Both / 都没有"
+        - "Nothing is missing; something else went wrong / 都录到了，是别的问题"
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: "What happened / 发生了什么"
+      description: |
+        Describe it in your own words. If you saw a message, paste it word for word.
+
+        用你自己的话说就好；如果看到了提示，请原样贴上。
+
+        If macOS asked for a permission, say which one and what you chose.
+
+        如果系统弹出过权限请求，说一下是哪一项、你怎么选的。
+      placeholder: |
+        e.g. The recording stopped by itself after about 20 minutes.
+        例：录了二十分钟左右，自己停了。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "What you expected / 正常应该是什么样"
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: "Output of meetcap doctor / meetcap doctor 的检查结果"
+      description: |
+        Run `meetcap doctor` in Terminal and paste everything it prints. If Terminal can't find the command, run `~/.local/bin/meetcap doctor`. It shows folder paths on your computer; delete any you'd rather not share.
+
+        在终端里运行 `meetcap doctor`，把显示的内容全部贴上。如果终端提示找不到命令，运行 `~/.local/bin/meetcap doctor`。结果里有电脑上的文件夹路径，不想公开的可以删掉。
+      render: shell
+    validations:
+      required: false

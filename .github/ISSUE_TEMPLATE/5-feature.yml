@@ -1,5 +1,5 @@
 name: "Suggest a feature / 提建议"
-description: "Something MeetCap doesn't do yet, or could do better. / MeetCap 还做不到，或者能做得更好的地方。"
+description: "Something MeetCap doesn't do yet. / MeetCap 还没有的功能。"
 title: "[Idea] "
 labels: ["enhancement"]
 body:
