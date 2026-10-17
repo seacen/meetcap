@@ -1,10 +1,26 @@
-**MeetCap** · English · [简体中文](./README.zh-CN.md)
+<p align="center">
+  <img src="assets/icon.png" width="128" height="128" alt="MeetCap icon">
+</p>
 
-# All ears. All yours.
+<h1 align="center">MeetCap</h1>
+
+<h3 align="center">All ears. All yours.</h3>
+
+<p align="center">
+  <a href="https://meetcap.seacen.dev/download"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/download-en-dark.svg"><img src="assets/download-en.svg" height="48" alt="Download for Mac"></picture></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/seacen/meetcap/releases/latest"><img src="https://img.shields.io/github/v/release/seacen/meetcap?style=flat-square&label=version&color=1D1D1F" alt="version"></a>
+  <img src="https://img.shields.io/badge/macOS_14.2%2B-Apple_silicon_%7C_Intel-1D1D1F?style=flat-square" alt="macOS 14.2 or later, Apple silicon or Intel">
+  <img src="https://img.shields.io/badge/Free-1D1D1F?style=flat-square" alt="Free">
+</p>
+
+<p align="center">
+  <a href="https://meetcap.seacen.dev">Website</a> · <a href="https://meetcap.seacen.dev/docs/">Help</a> · <a href="https://meetcap.seacen.dev/feedback/">Feedback</a> · <b>English</b> · <a href="./README.zh-CN.md">简体中文</a>
+</p>
 
 Record any meeting you want, free, for as long as you like. If your mind drifts or the topic is new, live summaries catch you up and explain the terms. When the meeting ends, clear minutes are already waiting, ready to send. MeetCap transcribes your recordings on your computer and never uploads them. And your AI agent can record, search past meetings, or use them as context. Just ask.
-
-**[Download MeetCap for Mac →](https://meetcap.seacen.dev/download)**
 
 <!-- Demo GIF goes here: say "record this meeting" in an AI agent, the menu bar icon turns into a red dot. -->
 

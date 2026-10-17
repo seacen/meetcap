@@ -1,10 +1,26 @@
-**MeetCap** · [English](./README.md) · 简体中文
+<p align="center">
+  <img src="assets/icon.png" width="128" height="128" alt="MeetCap 图标">
+</p>
 
-# 只管开口，句句在手。
+<h1 align="center">MeetCap</h1>
+
+<h3 align="center">只管开口，句句在手。</h3>
+
+<p align="center">
+  <a href="https://meetcap.seacen.dev/download"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/download-zh-dark.svg"><img src="assets/download-zh.svg" height="48" alt="下载 Mac 版"></picture></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/seacen/meetcap/releases/latest"><img src="https://img.shields.io/github/v/release/seacen/meetcap?style=flat-square&label=%E7%89%88%E6%9C%AC&color=1D1D1F" alt="版本"></a>
+  <img src="https://img.shields.io/badge/macOS_14.2%2B-Apple_%E8%8A%AF%E7%89%87_%7C_Intel-1D1D1F?style=flat-square" alt="macOS 14.2 或更高版本，Apple 芯片或 Intel">
+  <img src="https://img.shields.io/badge/%E5%85%8D%E8%B4%B9-1D1D1F?style=flat-square" alt="免费">
+</p>
+
+<p align="center">
+  <a href="https://meetcap.seacen.dev/zh-cn/">官网</a> · <a href="https://meetcap.seacen.dev/zh-cn/docs/">帮助</a> · <a href="https://meetcap.seacen.dev/zh-cn/feedback/">反馈</a> · <a href="./README.md">English</a> · <b>简体中文</b>
+</p>
 
 随时随地开录，免费不限次。会中实时小结与生词介绍，走神和话题不熟再也不怕；会后高质量纪要直出，助你场场有成果、决策有沉淀。录音全程本地处理，隐私有保障。不论你在用什么 AI，都能轻松和 MeetCap 打交道：录会、查历史，还是为它提供珍贵上下文，一切一句话搞定。
-
-**[下载 MeetCap for Mac →](https://meetcap.seacen.dev/download)**
 
 <!-- 演示动图放这里：在智能体里说一句“录下这场会”，菜单栏图标变成红点。 -->
 
