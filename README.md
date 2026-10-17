@@ -13,6 +13,8 @@
 <p align="center">
   <a href="https://github.com/seacen/meetcap/releases/latest"><img src="https://img.shields.io/github/v/release/seacen/meetcap?style=flat-square&label=version&color=1D1D1F" alt="version"></a>
   <img src="https://img.shields.io/badge/macOS_14.2%2B-Apple_silicon_%7C_Intel-1D1D1F?style=flat-square" alt="macOS 14.2 or later, Apple silicon or Intel">
+  <img src="https://img.shields.io/badge/Windows-on_the_way-8E8E93?style=flat-square" alt="Windows on the way">
+  <img src="https://img.shields.io/badge/iPhone-on_the_way-8E8E93?style=flat-square" alt="iPhone on the way">
   <img src="https://img.shields.io/badge/Free-1D1D1F?style=flat-square" alt="Free">
 </p>
 
