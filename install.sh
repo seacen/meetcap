@@ -24,7 +24,8 @@
 # START_RATE in its first START_SECONDS, or under STALL_RATE for STALL_SECONDS
 # at any point (curl's own --speed-limit), and then from the second point,
 # on from the bytes already here when its SHA256SUMS gives the disk image the
-# same sum. The disk image is checked against SHA256SUMS before it is opened.
+# same sum. The disk image is checked against SHA256SUMS before it is opened,
+# and the app on it is checked to be ours before it is copied (`ours`, below).
 #
 # Overridable, for testing and for a release that is not the latest:
 #   MEETCAP_RELEASE_URL   the first point (default: GitHub's latest release)
@@ -327,6 +328,31 @@ sum_at() { # sum_at <point>
 	[ "${#sum}" -eq 64 ] || { sum=""; return 1; }
 }
 
+# Whether the app at <app> is MeetCap as we release it (steps/08 item 121).
+# SHA256SUMS comes from the same point as the disk image, so a point whose two
+# files were both replaced passes the sum; and a file curl downloads carries no
+# quarantine, so Gatekeeper never looks at this app. Here it is checked that:
+# * the signature is whole and is MeetCap's (`codesign --verify --deep
+#   --strict`, against the designated requirement our releases carry,
+#   `codesign -d -r-`): a Developer ID Application certificate Apple issued
+#   to team TEAM_ID, so a certificate made by anyone else, whatever team it
+#   names, does not pass;
+# * Apple notarized it (codesign's `notarized` requirement). The ticket is
+#   stapled to the disk image, not to the app, so `--check-notarization` asks
+#   Apple for it online (man codesign); the install is online anyway.
+# Both are codesign's, part of macOS. Not `spctl -a`: its answer follows this
+# Mac's Gatekeeper setting, and where the person allows apps from anywhere it
+# no longer says whether the app is notarized. Not `stapler`: it is one of the
+# developer tools' stand-ins (man xcode-select, FILES), which a Mac without
+# them does not run, and the app has no ticket of its own for it to read.
+TEAM_ID=9QGMD7XVWP           # scripts/release.py TEAM_ID
+BUNDLE_ID=dev.seacen.MeetCap # scripts/release.py RELEASE_ID
+ours() { # ours <app>
+	codesign --verify --deep --strict -R="identifier \"$BUNDLE_ID\" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] exists and certificate leaf[field.1.2.840.113635.100.6.1.13] exists and certificate leaf[subject.OU] = \"$TEAM_ID\"" \
+		"$1" >/dev/null 2>&1 || return 1
+	codesign --verify --check-notarization -R=notarized "$1" >/dev/null 2>&1
+}
+
 # This Mac's disk image from a point into $dmg, on from the bytes already there, in the
 # background while the bar follows it a few times a second (on a terminal):
 # 0 once it is all here. Non-zero when the point fails, when it stays under
@@ -404,6 +430,13 @@ if [ -z "$kept" ]; then
 	fi
 	mkdir "$volume"
 	if ! hdiutil attach -quiet -nobrowse -readonly -noautoopen -mountpoint "$volume" "$dmg" >/dev/null; then
+		stop "下载的 MeetCap 无法打开。请再运行一次安装命令。" \
+			"The downloaded copy of MeetCap couldn't be opened. Run the install command again."
+	fi
+	# Not an app we signed and Apple notarized: as damaged as one that does
+	# not open. Stopped before anything is copied or run; the way out takes
+	# the volume off (cleanup).
+	if ! ours "$volume/MeetCap.app"; then
 		stop "下载的 MeetCap 无法打开。请再运行一次安装命令。" \
 			"The downloaded copy of MeetCap couldn't be opened. Run the install command again."
 	fi

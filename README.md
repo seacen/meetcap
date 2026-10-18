@@ -21,18 +21,16 @@
   <a href="https://meetcap.seacen.dev">Website</a> · <a href="https://meetcap.seacen.dev/docs/">Help</a> · <a href="https://meetcap.seacen.dev/feedback/">Feedback</a> · <b>English</b> · <a href="./README.zh-CN.md">简体中文</a>
 </p>
 
-<p align="center"><img src="assets/hero-en.gif" width="960" alt="MeetCap in under 30 seconds: record any meeting free, live summaries that explain unfamiliar terms, minutes ready when it ends, recordings that stay on your computer, and any AI you like."></p>
-
-<p align="center"><a href="https://meetcap.seacen.dev/media/hero-en-sound.mp4">▶ Watch with sound</a></p>
+<p align="center"><img src="assets/hero-en.gif" width="960" alt="Type “record this meeting” to your AI agent, and the menu bar shows a red dot and a running timer."></p>
 
 Record any meeting you want, free, for as long as you like. If your mind drifts or the topic is new, live summaries catch you up and explain the terms. When the meeting ends, clear minutes are already waiting, ready to send. MeetCap transcribes your recordings on your computer and never uploads them. And your AI agent can record, search past meetings, or use them as context. Just ask.
 
 ## When you'll want it
 
-- **Your mind drifts, or the topic is new.** The live summary catches you up in seconds, and Background explains each new term and why it matters here.
+- **Mid-meeting, the talk turns to something you don't know well.** Terms and acronyms keep coming; a glance at the live summary tells you what they mean and why they matter here.
 - **Five or six meetings back to back.** Recording starts on schedule and the minutes are ready when each one ends, so your evenings stay yours.
 - **English and Chinese in the same sentence, acronyms everywhere.** Names and terms come out spelled the way your team writes them.
-- **Some meetings can't leave the room.** Your recording is transcribed, speaker by speaker, on your computer and stays there. For the minutes, use your company's own AI, or MeetCap's local model to keep even the text there.
+- **Recordings can't leave the company.** Transcription and telling who said what both run on your computer, so recordings stay local. For the minutes, MeetCap supports your company's own AI, or MeetCap's local model, which keeps even the text on your computer.
 - **Weeks later, you need what was said.** Ask your AI "What price did we agree with the supplier last month?" and it finds it in your meeting records.
 
 ## Context-aware
@@ -94,10 +92,6 @@ Permissions, models, uninstalling and the rest are covered at [meetcap.seacen.de
 ## Feedback
 
 Want something MeetCap doesn't do yet? Check [existing suggestions](https://github.com/seacen/meetcap/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc) and add a 👍 to the ones you want. To report a problem, suggest something new, or email us, go to the [feedback page](https://meetcap.seacen.dev/feedback/).
-
-## Acknowledgements
-
-MeetCap is built on open models and software, including [X-ASR](https://github.com/Gilgamesh-J/X-ASR), [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx), [Nemotron-3 Diarization](https://huggingface.co/nvidia/Nemotron-3-Diarization), [3D-Speaker](https://github.com/modelscope/3D-Speaker), [Silero VAD](https://github.com/snakers4/silero-vad), [Gemma](https://huggingface.co/google/gemma-4-E4B-it-qat-q4_0-gguf) and [llama.cpp](https://github.com/ggml-org/llama.cpp). Thanks to everyone behind them. The [full list](https://meetcap.seacen.dev/docs/reference/acknowledgements/) is in the docs.
 
 ## Privacy and terms
 
