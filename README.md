@@ -21,9 +21,9 @@
   <a href="https://meetcap.seacen.dev">Website</a> · <a href="https://meetcap.seacen.dev/docs/">Help</a> · <a href="https://meetcap.seacen.dev/feedback/">Feedback</a> · <b>English</b> · <a href="./README.zh-CN.md">简体中文</a>
 </p>
 
-Record any meeting you want, free, for as long as you like. If your mind drifts or the topic is new, live summaries catch you up and explain the terms. When the meeting ends, clear minutes are already waiting, ready to send. MeetCap transcribes your recordings on your computer and never uploads them. And your AI agent can record, search past meetings, or use them as context. Just ask.
+<p align="center"><img src="assets/hero-en.gif" width="960" alt="MeetCap in under 30 seconds: record any meeting free, live summaries that explain unfamiliar terms, minutes ready when it ends, recordings that stay on your computer, and any AI you like."></p>
 
-<!-- Demo GIF goes here: say "record this meeting" in an AI agent, the menu bar icon turns into a red dot. -->
+Record any meeting you want, free, for as long as you like. If your mind drifts or the topic is new, live summaries catch you up and explain the terms. When the meeting ends, clear minutes are already waiting, ready to send. MeetCap transcribes your recordings on your computer and never uploads them. And your AI agent can record, search past meetings, or use them as context. Just ask.
 
 ## When you'll want it
 
