@@ -21,16 +21,18 @@
   <a href="https://meetcap.seacen.dev/zh-cn/">官网</a> · <a href="https://meetcap.seacen.dev/zh-cn/docs/">帮助</a> · <a href="https://meetcap.seacen.dev/zh-cn/feedback/">反馈</a> · <a href="./README.md">English</a> · <b>简体中文</b>
 </p>
 
-<p align="center"><img src="assets/hero-zh.gif" width="960" alt="对智能体说一句“录下这场会”，菜单栏出现红点，计时开始走。"></p>
+<p align="center"><img src="assets/hero-zh.gif" width="960" alt="半分钟看懂 MeetCap：随时开录、免费不限次，会中小结解释没听过的词，散会纪要已写好，录音不出你的电脑，用什么 AI 都行。"></p>
+
+<p align="center"><a href="https://meetcap.seacen.dev/media/hero-zh-sound.mp4">▶ 看有声版</a></p>
 
 随时随地开录，免费不限次。会中实时小结与生词介绍，走神和话题不熟再也不怕；会后高质量纪要直出，助你场场有成果、决策有沉淀。录音全程本地处理，隐私有保障。不论你在用什么 AI，都能轻松和 MeetCap 打交道：录会、查历史，还是为它提供珍贵上下文，一切一句话搞定。
 
 ## 这些时候用得上
 
-- **会开到一半，聊到你不熟的话题**：术语、缩写一个接一个，扫一眼实时小结，就知道它们是什么、跟这场会有什么关系。
+- **走神了，或者聊到你不熟的话题**：扫一眼实时小结，几秒钟就跟上刚才谈了什么；冒出来的术语、缩写，背景里写着它们是什么、跟这场会有什么关系。
 - **一天连开五六场**：到点自动开录，散会就有纪要，不用再占掉晚上去整理。
 - **中英夹杂、满口缩写**：照样转得准，纪要按你们自己的写法写。
-- **录音不能出公司**：语音识别、分说话人都用电脑上的本地模型，录音不出电脑。纪要可以交给公司自己的模型写，也可以用 MeetCap 提供的本地模型来写，连文字都不出电脑。
+- **内容敏感，录音不能出公司**：语音识别、分说话人都用电脑上的本地模型，录音不出电脑。纪要可以交给公司自己的模型写，也可以用 MeetCap 提供的本地模型来写，连文字都不出电脑。
 - **几周后要用到会上的内容**：问你的 AI 一句“上个月和供应商谈的价格是多少”，它直接从会议记录里找出来。
 
 ## 懂上下文
@@ -92,6 +94,10 @@ curl -fsSL https://meetcap.seacen.dev/install.sh | bash
 ## 反馈与建议
 
 需要 MeetCap 还没有的功能，先查看[大家提过的建议](https://github.com/seacen/meetcap/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc)，有一样的就点个 👍。报问题、提新的建议或者发邮件，都在[反馈与建议](https://meetcap.seacen.dev/zh-cn/feedback/)页。
+
+## 致谢
+
+MeetCap 用到了 [X-ASR](https://github.com/Gilgamesh-J/X-ASR)、[sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx)、[Nemotron-3 Diarization](https://huggingface.co/nvidia/Nemotron-3-Diarization)、[3D-Speaker](https://github.com/modelscope/3D-Speaker)、[Silero VAD](https://github.com/snakers4/silero-vad)、[Gemma](https://huggingface.co/google/gemma-4-E4B-it-qat-q4_0-gguf)、[llama.cpp](https://github.com/ggml-org/llama.cpp) 等开源模型和软件，感谢它们的作者。完整名单见文档站的[致谢](https://meetcap.seacen.dev/zh-cn/docs/reference/acknowledgements/)页。
 
 ## 隐私与条款
 
