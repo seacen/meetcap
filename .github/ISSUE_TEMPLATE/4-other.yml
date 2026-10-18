@@ -1,5 +1,5 @@
 name: "Other problem / 其他问题"
-description: "Anything not about recording, the transcript or the minutes: the library and syncing, exporting, agents and the meetcap command, or MeetCap quitting, freezing or running slowly. / 不属于录音、逐字稿和纪要的问题：会议库与同步、导出、智能体与命令行，或者闪退、卡住、很慢。"
+description: "Anything else: the library and syncing, exporting, agents and the meetcap command, or MeetCap quitting, freezing or running slowly. / 其他问题：会议库与同步、导出、智能体与命令行，或者闪退、卡住、很慢。"
 title: "[Other] "
 labels: ["bug", "other"]
 body:
