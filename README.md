@@ -79,7 +79,7 @@ Let your agent run MeetCap, or let MeetCap run your agent. Start wherever you al
 
 **[Download MeetCap for Mac →](https://meetcap.seacen.dev/download)** Open it and follow the short setup.
 
-Needs a Mac with macOS 14.2 or later, Apple silicon or Intel; Windows and iPhone are on the way.
+Needs a Mac with macOS 14.2 or later, Apple silicon or Intel; Windows and iPhone versions are coming soon.
 
 Prefer the terminal? One line does it:
 
