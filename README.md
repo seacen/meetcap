@@ -39,12 +39,16 @@ Record any meeting you want, free, for as long as you like. If your mind drifts 
 
 MeetCap knows what the meeting is about, so you keep up during the meeting and get accurate minutes after.
 
+<p align="center"><img src="assets/pillar-1-en.gif" width="960" alt="Context-aware: summaries explain jargon as it comes up, a second listen fixes misheard words, it learns your team's words, and your AI does the prep."></p>
+
 - **During the meeting.** A short summary every few minutes, with a note on any unfamiliar term, product or event and what it means for this meeting.
 - **After the meeting.** Misheard names and terms are fixed before the minutes are written. In a recurring meeting, the minutes pick up where last time left off.
 - **Learns your team's words.** Names you confirm go into a glossary, so they're spelled right next time.
 - **Does its homework.** If you use an agent, it looks up the attendees, agenda and project in your calendar, email and docs.
 
 ## Powerful, free, no lock-in
+
+<p align="center"><img src="assets/pillar-2-en.gif" width="960" alt="Record any meeting, captions that keep up when people switch languages, speakers named once and recognized next time, and minutes ready when the meeting ends, in English or Chinese, exported to Word or PDF."></p>
 
 ### Powerful
 
@@ -70,6 +74,8 @@ All of it runs on your computer, and it's all free: no time limits, no locked fe
 ## Built for your AI
 
 Let your agent run MeetCap, or let MeetCap run your agent. Start wherever you already work.
+
+<p align="center"><img src="assets/pillar-3-en.gif" width="960" alt="Tell your AI to record the meeting and it does; MeetCap also runs your AI for summaries and minutes; weeks later, ask your AI and it finds the line."></p>
 
 - **From your agent.** Tell your agent "record this one" and it does. Mid-meeting, ask what you missed. Afterward, get the minutes or find the meeting where the budget came up. Claude Code, Codex, and any agent that can load a skill can do this, right in the chat you already have open.
 - **From MeetCap.** Rather click the menu bar than open a chat? MeetCap runs your agent in the background to write live summaries and minutes. It works with 20+ agents, on the subscription you already have, at no extra cost.
