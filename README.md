@@ -27,10 +27,10 @@ Record any meeting you want, free, for as long as you like. If your mind drifts 
 
 ## When you'll want it
 
-- **Mid-meeting, the talk turns to something you don't know well.** Terms and acronyms keep coming; a glance at the live summary tells you what they mean and why they matter here.
+- **Your mind drifts, or the topic is new.** The live summary catches you up in seconds, and Background explains each new term and why it matters here.
 - **Five or six meetings back to back.** Recording starts on schedule and the minutes are ready when each one ends, so your evenings stay yours.
 - **English and Chinese in the same sentence, acronyms everywhere.** Names and terms come out spelled the way your team writes them.
-- **Recordings can't leave the company.** Transcription and telling who said what both run on your computer, so recordings stay local. For the minutes, MeetCap supports your company's own AI, or MeetCap's local model, which keeps even the text on your computer.
+- **Some meetings can't leave the room.** Transcription and telling who said what both run on your computer, so recordings stay local. For the minutes, MeetCap supports your company's own AI, or MeetCap's local model, which keeps even the text on your computer.
 - **Weeks later, you need what was said.** Ask your AI "What price did we agree with the supplier last month?" and it finds it in your meeting records.
 
 ## Context-aware
