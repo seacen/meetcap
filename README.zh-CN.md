@@ -23,6 +23,8 @@
 
 <p align="center"><img src="assets/hero-zh.gif" width="960" alt="半分钟看懂 MeetCap：随时开录、免费不限次，会中小结解释没听过的词，散会纪要已写好，录音不出你的电脑，用什么 AI 都行。"></p>
 
+<p align="center"><a href="https://meetcap.seacen.dev/media/hero-zh-sound.mp4">▶ 看有声版</a></p>
+
 随时随地开录，免费不限次。会中实时小结与生词介绍，走神和话题不熟再也不怕；会后高质量纪要直出，助你场场有成果、决策有沉淀。录音全程本地处理，隐私有保障。不论你在用什么 AI，都能轻松和 MeetCap 打交道：录会、查历史，还是为它提供珍贵上下文，一切一句话搞定。
 
 ## 这些时候用得上
@@ -92,6 +94,10 @@ curl -fsSL https://meetcap.seacen.dev/install.sh | bash
 ## 反馈与建议
 
 需要 MeetCap 还没有的功能，先查看[大家提过的建议](https://github.com/seacen/meetcap/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc)，有一样的就点个 👍。报问题、提新的建议或者发邮件，都在[反馈与建议](https://meetcap.seacen.dev/zh-cn/feedback/)页。
+
+## 致谢
+
+MeetCap 用到了 [X-ASR](https://github.com/Gilgamesh-J/X-ASR)、[sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx)、[Nemotron-3 Diarization](https://huggingface.co/nvidia/Nemotron-3-Diarization)、[3D-Speaker](https://github.com/modelscope/3D-Speaker)、[Silero VAD](https://github.com/snakers4/silero-vad)、[Gemma](https://huggingface.co/google/gemma-4-E4B-it-qat-q4_0-gguf)、[llama.cpp](https://github.com/ggml-org/llama.cpp) 等开源模型和软件，感谢它们的作者。完整名单见文档站的[致谢](https://meetcap.seacen.dev/zh-cn/docs/reference/acknowledgements/)页。
 
 ## 隐私与条款
 

@@ -23,6 +23,8 @@
 
 <p align="center"><img src="assets/hero-en.gif" width="960" alt="MeetCap in under 30 seconds: record any meeting free, live summaries that explain unfamiliar terms, minutes ready when it ends, recordings that stay on your computer, and any AI you like."></p>
 
+<p align="center"><a href="https://meetcap.seacen.dev/media/hero-en-sound.mp4">▶ Watch with sound</a></p>
+
 Record any meeting you want, free, for as long as you like. If your mind drifts or the topic is new, live summaries catch you up and explain the terms. When the meeting ends, clear minutes are already waiting, ready to send. MeetCap transcribes your recordings on your computer and never uploads them. And your AI agent can record, search past meetings, or use them as context. Just ask.
 
 ## When you'll want it
@@ -92,6 +94,10 @@ Permissions, models, uninstalling and the rest are covered at [meetcap.seacen.de
 ## Feedback
 
 Want something MeetCap doesn't do yet? Check [existing suggestions](https://github.com/seacen/meetcap/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement+sort%3Areactions-%2B1-desc) and add a 👍 to the ones you want. To report a problem, suggest something new, or email us, go to the [feedback page](https://meetcap.seacen.dev/feedback/).
+
+## Acknowledgements
+
+MeetCap is built on open models and software, including [X-ASR](https://github.com/Gilgamesh-J/X-ASR), [sherpa-onnx](https://github.com/k2-fsa/sherpa-onnx), [Nemotron-3 Diarization](https://huggingface.co/nvidia/Nemotron-3-Diarization), [3D-Speaker](https://github.com/modelscope/3D-Speaker), [Silero VAD](https://github.com/snakers4/silero-vad), [Gemma](https://huggingface.co/google/gemma-4-E4B-it-qat-q4_0-gguf) and [llama.cpp](https://github.com/ggml-org/llama.cpp). Thanks to everyone behind them. The [full list](https://meetcap.seacen.dev/docs/reference/acknowledgements/) is in the docs.
 
 ## Privacy and terms
 
