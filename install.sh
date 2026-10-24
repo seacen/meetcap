@@ -516,15 +516,23 @@ if [ "$(field link.state)" = not_a_link ]; then
 		"Couldn't install the meetcap command. Move the file named meetcap out of ~/.local/bin, then run the install command again."
 else
 	link_dir="$(dirname "$(field link.path)")"
+	# `_place` put ~/.local/bin on the login shell's PATH itself when it was not
+	# there (`link.shell_file`, the file it added the lines to): a new window has it.
+	profile="$(field link.shell_file)"
+	case "$profile" in "$HOME"/*) profile="~${profile#"$HOME"}" ;; esac
 	case ":$PATH:" in
 	*":$link_dir:"*)
 		ticked say "现在可以在终端里使用 meetcap 命令。" "You can now use the meetcap command in Terminal." ;;
-	*)
+	*) if [ -n "$profile" ]; then
+		say "要在终端里使用 meetcap 命令，请打开一个新的终端窗口。MeetCap 已在 ${profile} 中添加一行，让终端能找到这个命令。" \
+			"To use the meetcap command in Terminal, open a new Terminal window. MeetCap added a line to $profile so Terminal can find the command."
+	else
 		case "${SHELL:-}" in */bash) profile="~/.bash_profile" ;; *) profile="~/.zshrc" ;; esac
 		say "要在终端里使用 meetcap 命令，请把下面这一行加到 ${profile}，再打开一个新的终端窗口：" \
 			"To use the meetcap command in Terminal, add this line to $profile, then open a new Terminal window:"
 		# shellcheck disable=SC2016 # printed for the person to paste, unexpanded
-		printf '%s    export PATH="$HOME/.local/bin:$PATH"\n' "$indent" ;;
+		printf '%s    export PATH="$HOME/.local/bin:$PATH"\n' "$indent"
+	fi ;;
 	esac
 fi
 

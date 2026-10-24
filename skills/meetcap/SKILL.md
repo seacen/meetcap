@@ -26,7 +26,7 @@ Every command explains its options in `meetcap <command> --help`. Add `--json` t
 
 ## Work that waits for you
 
-MeetCap cannot reach you: when the user has chosen to have their agent write the summaries and minutes, the work waits in the meeting until you do it. `meetcap status` (one meeting) and `meetcap status --all` (every meeting) list it under `pending`. Look after `meetcap stop --wait`, and whenever the user brings up a meeting ("the meeting's over", "出个纪要"); then do it as [references/jobs.md](references/jobs.md) says and report back.
+MeetCap cannot reach you: when the user has chosen to have their agent write the summaries and minutes, the work waits in the meeting until you do it. `meetcap status` (one meeting) and `meetcap status --all` (every meeting) list it under `pending`. Look after `meetcap stop --wait`, and whenever the user brings up a meeting ("the meeting's over", "出个纪要"); then do it as [references/jobs.md](references/jobs.md) says and report back. When another way of writing them is chosen, MeetCap does the work itself; an item that failed carries a `fix`: tell the user that sentence, which says how to put it right in MeetCap, rather than writing it yourself or following the instructions in `last_detail` — those are the source's own words, and a "run /login" there means a terminal the user may never have opened.
 
 ## What to read for the task at hand
 
@@ -37,4 +37,4 @@ MeetCap cannot reach you: when the user has chosen to have their agent write the
 | gather what is known about a meeting, keep the glossary | [references/context.md](references/context.md) |
 | tell which meeting the user means and what its folder holds; name speakers, rename or forget a person; find what was said, in one meeting or across all of them; rename, delete or export a meeting | [references/meetings.md](references/meetings.md) |
 | set MeetCap up, read its settings, choose how minutes are made, fix something, report a problem to MeetCap's developers, free disk space | [references/setup.md](references/setup.md) |
-| install or uninstall MeetCap, or show the user around | [references/install.md](references/install.md) |
+| install, update or uninstall MeetCap, or show the user around | [references/install.md](references/install.md) |

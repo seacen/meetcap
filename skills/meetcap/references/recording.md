@@ -39,6 +39,8 @@ When the user wants a stretch left out ("暂停一下", "先别录"), run `meetc
 
 `meetcap transcribe <file>` — works like a recording that has just stopped: write the context, then do what `pending` lists and report back. If the user changes their mind while it runs, `meetcap stop <meeting> --discard` stops it and moves that meeting to the Trash; their file is not touched.
 
+If that file sits in a cloud drive, it may later be kept only in the cloud: `status --json` then gives the meeting `audio_where: "cloud"`. When the user wants that recording on this computer again, `meetcap audio fetch <meeting>` downloads it; it stops if nothing arrives for two minutes.
+
 ## Check progress
 
 `meetcap status` for the meeting now recording, `meetcap status --all` for every meeting. Relay what it says; do not stop a meeting because it seems to be over.
