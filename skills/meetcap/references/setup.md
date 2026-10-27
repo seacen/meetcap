@@ -17,7 +17,7 @@ Either way, finish with `meetcap doctor` and relay its `fix`. After a first setu
 
 `meetcap config` lists the settings in plain words, each with how to change it; `meetcap config get <key> --json` reads one, such as `summary_interval_min` (minutes between summaries) or `intelligence.mode` (how summaries and minutes are made), and `meetcap config --json` gives them all with where each comes from. Change the tags, the summary interval, minutes in both languages and how long recordings are kept with `meetcap config set <key> <value>`; the library, its language and how minutes are made with `meetcap setup`. Never edit the files.
 
-To move the library to another folder, run `meetcap setup --move-library <new folder>`: it says what would move, and `--confirm` moves only the library's own files — the meetings, its settings, the voices it knows and the glossary. Anything else in that folder, such as the notes of an Obsidian vault, stays where it is, and so do the recordings, which are kept on this computer.
+To move the library to another folder, run `meetcap setup --move-library <new folder>`: it says what it would do, and `--confirm` does it. A move takes only the library's own files — the meetings, its settings, the voices it knows and the glossary. Anything else in that folder, such as the notes of an Obsidian vault, stays where it is, and so do the recordings, which are kept on this computer. When that folder is already a meeting library, or there is no library here to move, nothing moves: MeetCap uses that folder as its library from then on, and the meetings of the current library stay where they are. Tell the user which of the two it would do before they agree.
 
 ## How summaries and minutes are made
 
