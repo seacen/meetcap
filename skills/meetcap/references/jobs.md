@@ -1,6 +1,6 @@
 # Summaries, minutes, translations, names
 
-The model work on a meeting is four jobs, and they are yours only when the user has chosen to have their agent write the summaries and minutes (`meetcap config get intelligence.mode --json` says `skill`); otherwise MeetCap does them itself and `submit` refuses yours. Asking whether the minutes are out, or what they say, is a question to answer from them ([meetings.md](meetings.md)), not a job:
+The model work on a meeting is four jobs:
 
 | Job | What it is | When you do it |
 |---|---|---|
