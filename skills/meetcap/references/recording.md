@@ -25,7 +25,7 @@ Stop when the user says they do not want summaries. While it records, MeetCap al
 
 ## A meeting that starts later
 
-Do not start now: `start` records from the moment you run it. If it recurs (a weekly meeting), offer `meetcap schedule add <when>` (read `meetcap schedule add --help` for the format first, and add it only after the user agrees). Otherwise ask them to tell you, or press Start in the menu bar, when it begins.
+Do not start now: `start` records from the moment you run it. If it recurs (a weekly meeting), offer `meetcap schedule add <when>` (read `meetcap schedule add --help` for the format first, and add it only after the user agrees). Otherwise ask them to tell you, or to click MeetCap's icon and press Start, when it begins.
 
 ## Pause and resume
 
@@ -37,7 +37,7 @@ When the user wants a stretch left out ("暂停一下", "先别录"), run `meetc
 
 ## Transcribe a file the user already has
 
-`meetcap transcribe <file>` — works like a recording that has just stopped: write the context, then do what `pending` lists and report back. If the user changes their mind while it runs, `meetcap stop <meeting> --discard` stops it and moves that meeting to the Trash; their file is not touched.
+`meetcap transcribe <file>` — works like a recording that has just stopped: write the context, then do what `pending` lists and report back. If the user changes their mind while it runs, `meetcap stop <meeting> --discard` stops it and moves that meeting to the trash; their file is not touched.
 
 If that file sits in a cloud drive, it may later be kept only in the cloud: `status --json` then gives the meeting `audio_where: "cloud"`. When the user wants that recording on this computer again, `meetcap audio fetch <meeting>` downloads it; it stops if nothing arrives for two minutes.
 

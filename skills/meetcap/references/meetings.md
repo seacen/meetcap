@@ -20,7 +20,7 @@ Every command needs the meeting, and a wrong guess puts minutes or names on some
 
 ## Rename or delete a meeting
 
-`meetcap rename <meeting> "<title>"` changes the title the notes and the app show; the folder keeps its name. `meetcap delete <meeting>` moves the meeting and its recordings to the Trash.
+`meetcap rename <meeting> "<title>"` changes the title the notes and the app show; the folder keeps its name. `meetcap delete <meeting>` moves the meeting and its recordings to the trash.
 
 ## Name a speaker
 
@@ -39,7 +39,7 @@ When the user does not say which meeting ("what did we decide about …?", "who 
 3. Nothing found? The transcript has the words as spoken and heard, not the user's: search again with other wordings — a synonym, the other language, a shorter key word.
 4. Answer with the meeting's title and day (the local day: `started_at` is in UTC), so the user can open it; when the subject came up in more than one meeting, say what each said.
 
-In a library on iCloud Drive, older files may be kept only in the cloud: reading one downloads it first, which can be slow. Search the minutes before the transcripts for that reason too.
+In a library in a cloud drive, older files may be kept only in the cloud: reading one downloads it first, which can be slow. Search the minutes before the transcripts for that reason too.
 
 ## Hand a meeting to someone
 
