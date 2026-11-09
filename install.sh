@@ -172,7 +172,8 @@ order() { # order <here> <available>: newer, same or older, number by number (1.
 	echo same
 }
 work="$(mktemp -d)"
-# Where the disk image is mounted, read-only.
+# Where the disk image is downloaded to, and where it is mounted, read-only.
+dmg="$work/$image"
 volume="$work/volume"
 fetching=""
 
@@ -185,20 +186,35 @@ mounted_at() { # mounted_at <folder>
 	up="$(stat -f %d "$1/.." 2>/dev/null)" || return 1
 	[ "$here" != "$up" ]
 }
-# Takes the volume at <folder> off: 0 once nothing is mounted there. A volume
-# just mounted is often still being read by the system for a moment (Spotlight
-# among others), and `hdiutil detach` then answers that it is busy: it is asked
-# again for about five seconds, then forced. Forcing loses nothing: the volume
-# is read-only, and this script is done reading it.
-detach() { # detach <folder>
-	local tries=0
-	while mounted_at "$1"; do
-		if [ "$tries" -ge 10 ]; then
-			hdiutil detach -quiet -force "$1" >/dev/null 2>&1 || true
-			! mounted_at "$1"
-			return
-		fi
-		hdiutil detach -quiet "$1" >/dev/null 2>&1 || sleep 0.5
+# The whole disk the disk image <file> is attached as, or nothing. Read from
+# the system's list of attached images, not remembered: right after it was
+# read, the eject is sometimes refused as busy with the volume already off,
+# and the image then stays attached, nothing mounted, until the Mac restarts
+# (scripts/release.py `detach`).
+attached_as() { # attached_as <file>
+	hdiutil info 2>/dev/null | awk -v want="$1" '
+		/^=+$/ { here = 0 }
+		/^image-path/ { sub(/^image-path[ \t]*:[ \t]*/, ""); here = ($0 == want); next }
+		here && !found && $1 ~ /^\/dev\/disk[0-9]+$/ { print $1; found = 1 }' || true
+}
+# What is left to take off of the disk image <file> mounted at <folder>: the
+# folder while a volume is mounted there, then the image's disk while it is
+# still attached; nothing once it is all off.
+left_of() { # left_of <folder> <file>
+	if mounted_at "$1"; then echo "$1"; else attached_as "$2"; fi
+}
+# Takes the disk image <file> mounted at <folder> off: 0 once nothing of it is
+# mounted or attached. A volume just mounted is often still being read by the
+# system for a moment (Spotlight among others), and `hdiutil detach` then
+# answers that it is busy: it is asked again for about five seconds, then
+# forced. Forcing loses nothing: the volume is read-only, and this script is
+# done reading it.
+detach() { # detach <folder> <file>
+	local tries=0 force="" left
+	while left="$(left_of "$1" "$2")" && [ -n "$left" ]; do
+		if [ "$tries" -ge 12 ]; then return 1; fi
+		if [ "$tries" -ge 10 ]; then force=-force; fi
+		hdiutil detach -quiet $force "$left" >/dev/null 2>&1 || sleep 0.5
 		tries=$((tries + 1))
 	done
 }
@@ -211,7 +227,7 @@ cleanup() {
 	# A download in the background is the script's to stop (Ctrl-C included:
 	# a non-interactive shell's background jobs ignore it).
 	if [ -n "$fetching" ]; then { kill "$fetching" && wait "$fetching"; } 2>/dev/null || true; fi
-	if detach "$volume"; then rm -rf "$work" 2>/dev/null || true; fi
+	if detach "$volume" "$dmg"; then rm -rf "$work" 2>/dev/null || true; fi
 }
 trap cleanup EXIT
 
@@ -395,7 +411,6 @@ pull() { # pull <point> <watch: yes or empty>
 
 if [ -z "$kept" ]; then
 	say "正在下载 MeetCap。" "Downloading MeetCap."
-	dmg="$work/$image"
 	fetched=""
 	# The first point's sum, then its disk image; the second's when the first
 	# has no sum, cannot be reached or is too slow, its disk image on from the
@@ -452,8 +467,8 @@ if [ -z "$kept" ]; then
 	mkdir -p "$applications"
 	rm -rf "$applications/.MeetCap.app.new"
 	ditto "$volume/MeetCap.app" "$applications/.MeetCap.app.new"
-	# One still mounted after that is tried again on the way out (cleanup).
-	detach "$volume" || true
+	# One still mounted or attached after that is tried again on the way out (cleanup).
+	detach "$volume" "$dmg" || true
 	rm -rf "$app"
 	mv "$applications/.MeetCap.app.new" "$app"
 
