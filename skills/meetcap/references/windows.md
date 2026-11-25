@@ -1,6 +1,6 @@
 # MeetCap on Windows
 
-What only Windows has: how to call `meetcap` without losing Chinese text or arguments, that nothing installs it yet, where to suggest keeping meetings, and what things on screen are called. The rest of this skill holds on Windows as written.
+What only Windows has: how to call `meetcap` without losing Chinese text or arguments, how MeetCap is installed, what differs when setting it up, and what things on screen are called. The rest of this skill holds on Windows as written.
 
 ## Calling `meetcap`
 
@@ -35,11 +35,37 @@ In PowerShell, put a value with a space, `$` or a backtick in single quotes, whi
 
 ## Installing
 
-Nothing installs MeetCap on Windows yet, so there is nothing for you or the user to run: when `meetcap --version` finds nothing, say so plainly.
+MeetCap for Windows comes from the Microsoft Store and nowhere else, so whether this computer can have it comes down to whether it reaches MeetCap in the Store. Find out first, with a check that installs nothing:
+
+```powershell
+winget show --id 9NVWHW0WJXNM --source msstore --accept-source-agreements --disable-interactivity
+```
+
+Its answer leaves one way to go. If the user has already asked you to install MeetCap, take it; if they have not (they only asked what MeetCap is, or you are the one who decided it should be installed), tell them which way it is and ask first.
+
+- **It answers with MeetCap's details** (`Found MeetCap [...]`): install it from the Store, for this user, with no administrator and no window:
+
+  ```powershell
+  winget install --id 9NVWHW0WJXNM --source msstore --silent --accept-package-agreements --accept-source-agreements --disable-interactivity
+  ```
+
+  The `--accept-…` options agree to the Store's terms and MeetCap's for the user who asked; without them winget waits for a yes that nobody can type.
+- **`winget` is not there, or it fails to reach the Store** (an error rather than an answer about MeetCap): install the package the Store signed for MeetCap, which the download page carries too. Download it with `curl.exe` (in Windows PowerShell 5.1 a bare `curl` is `Invoke-WebRequest`, many times slower on a file this size), then install it for this user; Windows checks the Store's signature, and no administrator is needed:
+
+  ```powershell
+  curl.exe -fL -o "$env:USERPROFILE\Downloads\MeetCap.msixbundle" https://github.com/seacen/meetcap/releases/latest/download/MeetCap.msixbundle
+  Add-AppxPackage -Path "$env:USERPROFILE\Downloads\MeetCap.msixbundle"
+  ```
+
+  When GitHub cannot be reached, the same file is at https://meetcap.seacen.dev/download/latest/MeetCap.msixbundle.
+- **The Store has no such package** (`No package found matching input criteria.`), **or the download is not there** (404): MeetCap is not in the Store yet, so nothing can install it on Windows yet. Say so plainly, give the download page, https://meetcap.seacen.dev/download, to check back later, and stop: there is no other way to install it.
+
+Once it is installed, `meetcap` answers in every shell, one already open included.
 
 ## Setting up
 
 - **Where to keep meetings**: suggest a MeetCap folder in Documents. Take the path of Documents from `[Environment]::GetFolderPath('MyDocuments')` in PowerShell rather than writing it out: on a company computer it may have been moved into OneDrive.
+- **「在这台电脑上生成」** ("This computer", `local`): on Windows it writes no summaries during a meeting; the minutes come after it as usual. Say so when the user chooses it, and leave the running summary out when you show them around.
 
 ## Names on screen
 

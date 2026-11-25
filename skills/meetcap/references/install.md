@@ -5,7 +5,7 @@ Check first with `meetcap --version`. What exists depends on the platform:
 | Platform | What there is |
 |---|---|
 | Mac with Apple silicon or Intel, macOS 14.2 or later | Menu bar app plus the `meetcap` command line. |
-| Windows | Tray app plus the `meetcap` command line. There is no installer for it yet. |
+| Windows | Tray app plus the `meetcap` command line, from the Microsoft Store. |
 | iPhone | App only. There is no command line, so an agent cannot drive it; point the user to the app. |
 
 How to install it here is under Installing in this computer's platform file ([mac.md](mac.md) or [windows.md](windows.md)). Then comes the first setup, in the app or by command: read "First setup" in [setup.md](setup.md).
